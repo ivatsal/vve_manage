@@ -1,0 +1,19 @@
+<div class="main">
+	<h1 style="margin-top: 100px;">User Details</h1>
+	<div>
+		<ag-grid-angular 
+			style="width: calc(100vw - 318px); height: 600px;" 
+			class="ag-theme-alpine"
+			[rowData]="rowData" 
+			[columnDefs]="columnDefs"
+			[animateRows]="true"
+			[rowSelection]="'multiple'"
+			[defaultColDef]="defaultColDef"
+			[pagination]="true"
+			[stopEditingWhenCellsLoseFocus]="true"
+			[enterNavigatesVerticallyAfterEdit]="true"
+			(cellValueChanged)="onCellValueChanged($event)"
+			>
+		</ag-grid-angular>
+	</div>
+</div>

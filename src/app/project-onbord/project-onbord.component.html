@@ -1,0 +1,62 @@
+<div class="main">
+    <mat-stepper
+  orientation="vertical" linear>
+  <mat-step [stepControl]="firstFormGroup" label="Fill up project details here">
+    <form [formGroup]="firstFormGroup" >
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Project ID</mat-label>
+          <input matInput formControlName="projectIdCtrl" type="number" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="projectTitleCtrl" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="descriptionCtrl" required></textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Fill-out Representative details">
+    <form [formGroup]="secondFormGroup">
+      <mat-form-field appearance="outline">
+        <mat-label>Manager ID</mat-label>
+        <input matInput formControlName="managerId" type="number" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Member ID</mat-label>
+        <input matInput formControlName="memberId" type="number" required>
+      </mat-form-field>
+      <div>
+        <button mat-button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup" label="Project Details">
+    <form [formGroup]="thirdFormGroup">
+      <mat-form-field appearance="outline">
+        <mat-label>Budget</mat-label>
+        <input matInput formControlName="budgetselected" type="number" placeholder="Max. value 100 crores" required>
+      </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Project status</mat-label>
+      <mat-select [(ngModel)]="selectedstatusValue" name="Status" formControlName="statusselected">
+        <mat-option *ngFor="let status of status" [value]="status.value">
+          {{status.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+      <div>
+        <button mat-button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-button mat-raised-button color="primary" (click)="projectCreate()">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>
+</div>
