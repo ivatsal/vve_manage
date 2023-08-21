@@ -1,0 +1,74 @@
+Following task should be performed:
+
+Description: You have to create the new angular 14 application with the angular cli. You have to create the project management application. Application should have the following functionalities. Basically there will be two modules user and project management.
+
+Followings are the fields that should be included in the module:
+
+User: 
+    id
+    firstName
+    lastName
+    email
+    password (Should contain the Capital letter, Small letter, Number and atleast one special Character)
+    gender [Male, Female, Other]
+    DOB
+    role [Admin, Manager, Member]
+Project: 
+    id
+    title
+    description
+    managerId
+    memberId
+    budget (Maximum value 100 crores)
+    status = [Pending, Review, Completed]
+    createdDate
+    completedDate
+
+
+ User Module
+- Implement the login module.
+- Users will have 3 roles = "Admin," "Manager," and "Member."
+    a. admin users will be able to create another managers and members.
+    b. at the time of creating user, admin will assign the password as well.
+- Create user route should be only accessible by the Admin.
+- Create the user profile page where user will be able to see his profile details and update it.
+- admin should be able to update any users details.
+- admin should be able to see all the users list.
+
+Project Module
+- There should be three different routes for the Project create, update and view. (But You can try to use reusable component to reduce the same code.) 
+    a. admin should have access to all three pages.
+    b. Manager should have access to update and view page only.
+    c. Member should have access to view page only.
+- Admin users will only have rights to create and delete Projects.
+- Admin will assign the manager and the user to the task.
+- Admin and Managers(only assigned to him) will be able to update the tasks.
+- Member will only be able to see the Projects and update the status.
+- All three types of users will be able to see the list of the task and task details. Admin will be able to see all the tasks while Manager and Member will be able to see the tasks assigned to them.
+- In the Project list tables project budget should be shown like below (For this create custom Pipe):
+    a. if budget is 1,000 then it should be shown 1 thousand
+    b. budget = 1,585 then 1.58 thousand
+    c. budget = 1,00,000 then 1 lac
+    d. budget = 10,50,000 then 10.5 lacs
+    c. budget = 50,56,00,000 then 50.56 Crores
+- Member will be able to update the status to Review.
+- Manager will be able to mark the Project as Completed only after Member mark it as review. 
+
+
+Dashboard
+- Admin only should have dashboard menu, where he will be able to see below details:
+    a. Total Projects
+    b. Total Users
+    c. Chart Showing Projects based on the status (Preferebly Donut Chart)
+
+
+Things to be followed while working on task:
+- Don't use any AI tools like, ChatGPT, Bard, Bing Chat, Perplexity, etc.
+- All the data should be maintained in local storage. (If you want to use firebase instead of the localstorage you can use that.)
+- Use Angular's built-in validators to enforce strong password requirements.
+- All the routes should be secured and unauthorized users should be thrown to sign in page.
+- Use Angular Reactive Forms for all the forms.
+- Use Angular's custom directives or components to create reusable UI elements.
+- Use agGrid for showing the list of the users and projects.
+- Tables should have pagination, filter and sorting feature.
+- If needed use the lazy loading modules.
